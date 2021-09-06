@@ -16,7 +16,7 @@ namespace TestTcgScanner
         public async Task<MtgCard> LookUpCard(string name, string number, string set)
         {
             var queryString = $"?name={HttpUtility.UrlEncode(name)}&number={HttpUtility.UrlEncode(number)}&set={HttpUtility.UrlEncode(set)}";
-            using var client = _clientFactory.CreateClient();
+            using var client = _clientFactory.CreateClient("mtgApi");
             var response = await client.GetAsync($"/v1/cards{queryString}");
 
             throw new NotImplementedException();
