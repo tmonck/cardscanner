@@ -13,23 +13,23 @@ namespace TestTcgScanner
         }
 
         /// <inheritdoc/>
-        public MtgCard LookUpCard(string name, string number, string set)
+        public async Task<MtgCard> LookUpCard(string name, string number, string set)
         {
             var queryString = $"?name={HttpUtility.UrlEncode(name)}&number={HttpUtility.UrlEncode(number)}&set={HttpUtility.UrlEncode(set)}";
             using var client = _clientFactory.CreateClient();
-            client.GetAsync($"/v1/cards{queryString}");
+            var response = await client.GetAsync($"/v1/cards{queryString}");
 
             throw new NotImplementedException();
         }
 
         /// <inheritdoc/>
-        public MtgCard LookUpCard(string name, string number)
+        public Task<MtgCard> LookUpCard(string name, string number)
         {
             throw new NotImplementedException();
         }
 
         /// <inheritdoc/>
-        public MtgCard LookUpCard(string name)
+        public Task<MtgCard> LookUpCard(string name)
         {
             throw new NotImplementedException();
         }
