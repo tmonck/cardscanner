@@ -5,8 +5,6 @@ VisualStudioVersion = 17.0.31612.314
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestTcgScanner", "TestTcgScanner\TestTcgScanner\TestTcgScanner.csproj", "{7789523D-4B77-4987-9015-CD5FE5699BA8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestTcgScanner.WinUI", "TestTcgScanner\TestTcgScanner.WinUI\TestTcgScanner.WinUI.csproj", "{AF256500-33DF-427F-98FF-87D13F428537}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,12 +17,6 @@ Global
 		{7789523D-4B77-4987-9015-CD5FE5699BA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7789523D-4B77-4987-9015-CD5FE5699BA8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7789523D-4B77-4987-9015-CD5FE5699BA8}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{AF256500-33DF-427F-98FF-87D13F428537}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AF256500-33DF-427F-98FF-87D13F428537}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AF256500-33DF-427F-98FF-87D13F428537}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{AF256500-33DF-427F-98FF-87D13F428537}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AF256500-33DF-427F-98FF-87D13F428537}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AF256500-33DF-427F-98FF-87D13F428537}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

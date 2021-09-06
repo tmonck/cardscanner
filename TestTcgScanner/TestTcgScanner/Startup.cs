@@ -19,9 +19,9 @@ namespace TestTcgScanner
 				{
 					fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
 				})
+				.UseMauiServiceProviderFactory(true)
 				.ConfigureServices(services =>
 				{
-					HttpClientFactory
 					services.AddScoped<ICardApi<MtgCard>, MtgCardApi>();
 				});
 		}

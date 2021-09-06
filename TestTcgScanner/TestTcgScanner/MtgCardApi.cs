@@ -1,19 +1,21 @@
 ﻿using System.Net.Http;
+using Microsoft.Extensions.Http;
 
 namespace TestTcgScanner
 {
     public class MtgCardApi : ICardApi<MtgCard>
     {
-        private HttpClient _client;
-        public MtgCardApi(HttpClient client)
+        private IHttpClientFactory _clientFactory;
+        public MtgCardApi(IHttpClientFactory clientFactory)
         {
-            _client = client ?? throw new ArgumentNullException(nameof(client));
+            _clientFactory = clientFactory ?? throw new ArgumentNullException(nameof(clientFactory));
         }
 
         /// <inheritdoc/>
         public MtgCard LookUpCard(string name, string number, string set)
         {
-            _client.GetAsync("");
+            using var client = _clientFactory.CreateClient();
+            client.GetAsync("");
 
             throw new NotImplementedException();
         }
