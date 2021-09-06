@@ -8,8 +8,8 @@ namespace TestTcgScanner
 {
     public interface ICardApi<T>
     {
-        T LookUpCard(string name, string number, string set);
-        T LookUpCard(string name, string number);
-        T LookUpCard(string name);
+        Task<T> LookUpCard(string name, string number, string set);
+        Task<T> LookUpCard(string name, string number);
+        Task<T> LookUpCard(string name);
     }
 }
