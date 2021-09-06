@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "TestTcgScanner.WinUI": {
+      "commandName": "MsixPackage",
+      "nativeDebugging": false
+    }
+  }
+}
