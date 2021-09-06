@@ -22,6 +22,10 @@ namespace TestTcgScanner
 				.UseMauiServiceProviderFactory(true)
 				.ConfigureServices(services =>
 				{
+					services.AddHttpClient("mtgApi", c =>
+					{
+						c.BaseAddress = new Uri("https://api.magicthegathering.io");
+					});
 					services.AddScoped<ICardApi<MtgCard>, MtgCardApi>();
 				});
 		}
