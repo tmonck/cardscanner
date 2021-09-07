@@ -35,9 +35,24 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <PackageReference Include="CommunityToolkit.Maui" Version="1.0.0-pre1" />
 	  <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.2" />
 	  <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />
 	  <PackageReference Include="Microsoft.Extensions.Http" Version="5.0.0" />
+	  <PackageReference Include="Xamarin.Google.MLKit.Vision.Common" Version="116.4.0" />
+	  <PackageReference Include="Xamarin.GooglePlayServices.MLKit.Text.Recognition" Version="116.2.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="MtgCardScanningPage.xaml.cs">
+	    <DependentUpon>MtgCardScanningPage.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="MtgCardScanningPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	</ItemGroup>
 
 	<PropertyGroup>
