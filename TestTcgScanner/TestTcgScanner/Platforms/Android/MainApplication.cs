@@ -3,14 +3,14 @@ using Android.App;
 using Android.Runtime;
 using Microsoft.Maui;
 
-namespace TestTcgScanner
+namespace TestTcgScanner.Platforms.Android
 {
-	[Application]
-	public class MainApplication : MauiApplication<Startup>
-	{
-		public MainApplication(IntPtr handle, JniHandleOwnership ownership)
-			: base(handle, ownership)
-		{
-		}
-	}
+    [Application]
+    public class MainApplication : MauiApplication<Startup>
+    {
+        public MainApplication(IntPtr handle, JniHandleOwnership ownership)
+            : base(handle, ownership)
+        {
+        }
+    }
 }
