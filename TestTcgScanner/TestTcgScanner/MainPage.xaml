@@ -39,6 +39,12 @@
                 HeightRequest="372"
                 HorizontalOptions="Center" />
 
+            <Button Text="Take picture"
+                    GridLayout.Row="5"
+                    SemanticProperties.Hint="Lets take pictures"
+                    Clicked="OnTakePicture"
+                    HorizontalOptions="Center" />
+
         </Grid>
     </ScrollView>
 </ContentPage>
