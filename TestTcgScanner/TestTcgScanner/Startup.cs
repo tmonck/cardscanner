@@ -19,15 +19,17 @@ namespace TestTcgScanner
 				{
 					fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
 				})
-				.UseMauiServiceProviderFactory(true)
-				.ConfigureServices(services =>
-				{
-					services.AddHttpClient("mtgApi", c =>
+                .UseMicrosoftExtensionsServiceProviderFactory() // Apparently this is what's needed to call .AddHttpClient. Need to dig into why
+                .ConfigureServices(services =>
+                {
+                    services.AddHttpClient("mtgApi", c =>
 					{
 						c.BaseAddress = new Uri("https://api.magicthegathering.io");
+						c.DefaultRequestHeaders.Add("Accept", "application/json");
+						c.DefaultRequestHeaders.Add("User-Agent", "HttpClientFactory-Sample");
 					});
-					services.AddScoped<ICardApi<MtgCard>, MtgCardApi>();
-				});
-		}
+                    services.AddScoped<ICardApi<MtgCard>, MtgCardApi>();
+                });
+        }
 	}
 }
