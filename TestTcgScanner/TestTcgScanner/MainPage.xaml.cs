@@ -2,6 +2,7 @@
 using Microsoft.Maui;
 using Microsoft.Maui.Controls;
 using Microsoft.Maui.Controls.PlatformConfiguration.WindowsSpecific;
+using Microsoft.Maui.Essentials;
 
 namespace TestTcgScanner
 {
@@ -17,6 +18,17 @@ namespace TestTcgScanner
         {
             count++;
             CounterLabel.Text = $"Current count: {count}";
+        }
+
+        private async void OnTakePicture(object sender, EventArgs e)
+        {
+            if (MediaPicker.IsCaptureSupported)
+            {
+                await MediaPicker.CapturePhotoAsync(new MediaPickerOptions
+                {
+                    Title = "TempPic"
+                });
+            }
         }
     }
 }
