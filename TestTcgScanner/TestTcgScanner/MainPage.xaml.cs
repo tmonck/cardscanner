@@ -32,9 +32,14 @@ namespace TestTcgScanner
             //CounterLabel.Text = $"#Cards: {test.Count}";
         }
 
+		private void CameraView_OnAvailable(object? sender, bool e)
+        {
+			Console.WriteLine("OnAvailable");
+        }
+
         private async void OnTakePicture(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new MtgCardScanningPage());
+            await Navigation.PushAsync(new MtgCardScanningPage());
         }
     }
 }

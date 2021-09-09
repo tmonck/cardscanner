@@ -6,18 +6,24 @@
              BackgroundColor="{DynamicResource PageBackgroundColor}">
 
     <ScrollView  Padding="{OnPlatform iOS='30,60,30,30', Default='30'}">
-        <Grid RowDefinitions="300, Auto">
+<Grid RowSpacing="25" RowDefinitions="Auto,Auto,Auto,Auto,Auto,*">
+        <!--Works-->
             <xct:CameraView
                     Grid.Row="0"
                     x:Name="cameraView"
                     CaptureMode="Photo"
+                    CameraOptions="Back"
                     FlashMode="Off"
                     HorizontalOptions="FillAndExpand"
-                    VerticalOptions="FillAndExpand" />
+                    VerticalOptions="FillAndExpand"
+                    OnAvailable="CameraView_OnAvailable"
+                />
+
+        <!--<Grid RowDefinitions="300, Auto">
             <Grid ColumnDefinitions="*, *" Grid.Row="0">
             
-                <!--No Works-->
-                <!--<xct:CameraView
+                --><!--No Works--><!--
+                <xct:CameraView
                     Grid.Column="1"
                     x:Name="cameraView"
                     CaptureMode="Photo"
@@ -26,12 +32,12 @@
                     VerticalOptions="FillAndExpand" />-->
                     <!--MediaCaptured="CameraView_MediaCaptured"
                     OnAvailable="CameraView_OnAvailable"-->
-                <Label
+                <!--<Label
                     Grid.Column="0"
                     Text="Camera"
                     HorizontalTextAlignment="Center"
                     HorizontalOptions="FillAndExpand"
-                    VerticalOptions="End" />
+                    VerticalOptions="End" />-->
 
                 <!--<Image
                     Grid.Column="2"
@@ -51,10 +57,10 @@
                     HorizontalTextAlignment="Center"
                     HorizontalOptions="FillAndExpand"
                     VerticalOptions="End" />-->
-            </Grid>
+            <!--</Grid>-->
 
 
-            <StackLayout Grid.Row="1" Orientation="Horizontal">
+            <!--<StackLayout Grid.Row="1" Orientation="Horizontal">
                 <Label x:Name="zoomLabel" />
                 <Slider
                     x:Name="zoomSlider"
@@ -108,9 +114,9 @@
                     x:Name="doCameraThings"
                     Clicked="DoCameraThings_Clicked"
                     IsEnabled="False"
-                    Text="Snap picture" />
+                    Text="Snap picture" />-->
 
-            </StackLayout>
+            <!--</StackLayout>-->
         </Grid>
     </ScrollView>
 </pages:BasePage>
