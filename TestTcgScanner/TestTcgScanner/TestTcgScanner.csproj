@@ -54,13 +54,19 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="MtgCardScanningPage.xaml.cs">
+	  <Compile Update="Views\DeckListPage.xaml.cs">
+	    <DependentUpon>DeckListPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\MtgCardScanningPage.xaml.cs">
 	    <DependentUpon>MtgCardScanningPage.xaml</DependentUpon>
 	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="MtgCardScanningPage.xaml">
+	  <MauiXaml Update="Views\DeckListPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\MtgCardScanningPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
@@ -72,5 +78,7 @@
 		<UseInterpreter Condition="$(TargetFramework.Contains('-android'))">False</UseInterpreter>
 		<Nullable>enable</Nullable>
 	</PropertyGroup>
+
+	<ProjectExtensions><VisualStudio><UserProperties XamarinHotReloadDebuggerTimeoutExceptionTestTcgScannerHideInfoBar="True" /></VisualStudio></ProjectExtensions>
 
 </Project>

@@ -74,16 +74,16 @@ namespace TestTcgScanner.ViewModels
             }
         }
 
-        private async IAsyncEnumerable<MtgCard> GetCards(MtgSearchParams filterParams)
-        {
-            //not working yet here
-            var cardResults = await _mtgCardApiService.GetCards(filterParams).ConfigureAwait(false);
+        //private async IAsyncEnumerable<MtgCard> GetCards(MtgSearchParams filterParams)
+        //{
+        //    //not working yet here
+        //    var cardResults = await _mtgCardApiService.GetCards(filterParams).ConfigureAwait(false);
 
-            foreach (var result in cardResults.Content)
-            {
-                yield return result;
-            }
-        }
+        //    foreach (var result in cardResults.Content)
+        //    {
+        //        yield return result;
+        //    }
+        //}
 
         private void ObservableCollectionCallback(IEnumerable collection, object context, Action accessMethod, bool writeAccess)
         {

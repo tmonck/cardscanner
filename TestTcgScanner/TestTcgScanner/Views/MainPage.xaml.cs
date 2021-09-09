@@ -15,29 +15,23 @@ namespace TestTcgScanner
             _mtgApi = ServiceProvider.GetService<IMtgApi>();
         }
 
-        int count = 0;
         private async void OnCounterClicked(object sender, EventArgs e)
         {
-            //count++;
-            //CounterLabel.Text = $"Current count: {count}";
-
             var searchParams = new MtgSearchParams
             {
                 Name = "chosen"
             };
 
-            //working on this here
             var test = await _mtgApi.GetCards(searchParams);
-
-            //CounterLabel.Text = $"#Cards: {test.Count}";
         }
 
-		private void CameraView_OnAvailable(object? sender, bool e)
+		    private void CameraView_OnAvailable(object? sender, bool e)
         {
-			Console.WriteLine("OnAvailable");
+			    Console.WriteLine("OnAvailable");
         }
 
-        private void OnTakePicture(object sender, EventArgs e)
+    private async void OnDecksButtonClicked(object sender, EventArgs e) => await App.Current.MainPage.Navigation.PushAsync(new DeckListPage());
+    private async void OnTakePicture(object sender, EventArgs e)
         {
             App.Current.MainPage.Navigation.PushAsync(new MtgCardScanningPage());
         }

@@ -9,6 +9,6 @@ namespace TestTcgScanner.Services
     public interface IMtgApi
     {
         [Get("/cards")]
-        Task<ApiResponse<IReadOnlyList<MtgCard>>> GetCards(MtgSearchParams searchParams);
+        Task<ApiResponse<MtgSearchResult>> GetCards(MtgSearchParams searchParams);
     }
 }

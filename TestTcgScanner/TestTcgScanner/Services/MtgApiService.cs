@@ -13,6 +13,6 @@ namespace TestTcgScanner.Services
         private readonly IMtgApi _mtgApiClient;
         public MtgApiService(IMtgApi mtgApiClient) => _mtgApiClient = mtgApiClient;
 
-        public async Task<ApiResponse<IReadOnlyList<MtgCard>>> GetCards(MtgSearchParams searchParams) => await _mtgApiClient.GetCards(searchParams);
+        public async Task<ApiResponse<MtgSearchResult>> GetCards(MtgSearchParams searchParams) => await _mtgApiClient.GetCards(searchParams);
     }
 }
