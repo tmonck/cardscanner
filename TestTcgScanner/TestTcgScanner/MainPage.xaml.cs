@@ -1,8 +1,4 @@
-﻿using System;
-using Microsoft.Maui;
-using Microsoft.Maui.Controls;
-using Microsoft.Maui.Controls.PlatformConfiguration.WindowsSpecific;
-using Microsoft.Maui.Essentials;
+﻿using Microsoft.Maui.Controls;
 using TestTcgScanner.Models;
 using TestTcgScanner.Services;
 
@@ -38,13 +34,7 @@ namespace TestTcgScanner
 
         private async void OnTakePicture(object sender, EventArgs e)
         {
-            if (MediaPicker.IsCaptureSupported)
-            {
-                await MediaPicker.CapturePhotoAsync(new MediaPickerOptions
-                {
-                    Title = "TempPic"
-                });
-            }
+            await Navigation.PushModalAsync(new MtgCardScanningPage());
         }
     }
 }

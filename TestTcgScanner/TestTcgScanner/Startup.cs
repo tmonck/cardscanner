@@ -25,6 +25,13 @@ namespace TestTcgScanner
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                 })
+                .ConfigureMauiHandlers(handlers =>
+                {
+
+                    // Register just one handler for the control you need
+                    handlers.AddCompatibilityRenderers(typeof(Xamarin.CommunityToolkit.UI.Views.MediaElementRenderer).Assembly);
+
+                })
                 .ConfigureServices(services =>
                 {
                     services.AddSingleton(RestService.For<IMtgApi>("https://api.magicthegathering.io/v1", new RefitSettings()
