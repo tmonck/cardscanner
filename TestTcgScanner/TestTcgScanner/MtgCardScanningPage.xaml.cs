@@ -9,9 +9,14 @@ namespace TestTcgScanner
         public MtgCardScanningPage()
         {
             InitializeComponent();
-			zoomLabel.Text = string.Format("Zoom: {0}", zoomSlider.Value);
+			//zoomLabel.Text = string.Format("Zoom: {0}", zoomSlider.Value);
 		}
 
+		private void CameraView_OnAvailable(object? sender, bool e)
+        {
+			Console.WriteLine("OnAvailable");
+        }
+		/*
 		private	void ZoomSlider_ValueChanged(object? sender, ValueChangedEventArgs e)
 		{
 			cameraView.Zoom = (float)zoomSlider.Value;
@@ -87,5 +92,6 @@ namespace TestTcgScanner
 					break;
 			}
 		}
+		*/
 	}
 }

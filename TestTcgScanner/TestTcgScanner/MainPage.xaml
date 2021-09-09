@@ -13,6 +13,7 @@
                     CaptureMode="Photo"
                     FlashMode="Off"
                     HorizontalOptions="FillAndExpand"
+                    OnAvailable="CameraView_OnAvailable"
                     VerticalOptions="FillAndExpand" />-->
 
             <Label Text="Hello, World!"
