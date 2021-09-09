@@ -1,10 +1,19 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
              x:Class="TestTcgScanner.MainPage"
              BackgroundColor="{DynamicResource PageBackgroundColor}">
 
     <ScrollView Padding="{OnPlatform iOS='30,60,30,30', Default='30'}">
         <Grid RowSpacing="25" RowDefinitions="Auto,Auto,Auto,Auto,*">
+        <!--Works-->
+            <!--<xct:CameraView
+                    Grid.Row="0"
+                    x:Name="cameraView"
+                    CaptureMode="Photo"
+                    FlashMode="Off"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand" />-->
 
             <Label Text="Hello, World!"
                 Grid.Row="0"
@@ -13,37 +22,38 @@
                 HorizontalOptions="CenterAndExpand" />
 
             <Label Text="Welcome to .NET Multi-platform App UI"
-                Grid.Row="1"
+                Grid.Row="2"
                 SemanticProperties.Hint="Counts the number of times you click"
                 FontSize="16"
                 HorizontalOptions="CenterAndExpand" />
 
-            <Label Text="Current count: 0"
-                Grid.Row="2"
+                <Label Text="Current count: 0"
+                Grid.Row="3"
                 SemanticProperties.Hint="Counts the number of times you click"
                 FontSize="18"
                 FontAttributes="Bold"
                 x:Name="CounterLabel"
                 HorizontalOptions="Center" />
 
-            <Button Text="Click me"
-                Grid.Row="3"
+                <Button Text="Click me"
+                Grid.Row="4"
                 SemanticProperties.Hint="Counts the number of times you click"
                 Clicked="OnCounterClicked"
                 HorizontalOptions="Center" />
 
-            <Image Grid.Row="4"
+                <Image Grid.Row="5"
                 Source="dotnet_bot.png"
                 SemanticProperties.Description="Cute dotnet bot waving hi to you!"
                 WidthRequest="300"
                 HeightRequest="372"
                 HorizontalOptions="Center" />
 
-            <Button Text="Take picture"
-                    GridLayout.Row="5"
+                <Button Text="Take picture"
+                    Grid.Row="6"
                     SemanticProperties.Hint="Lets take pictures"
                     Clicked="OnTakePicture"
                     HorizontalOptions="Center" />
+
 
         </Grid>
     </ScrollView>
