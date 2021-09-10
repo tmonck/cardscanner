@@ -1,22 +1,16 @@
 ﻿using Microsoft.Maui.Controls;
-using TestTcgScanner.Pages;
 using Xamarin.CommunityToolkit.UI.Views;
 
 namespace TestTcgScanner
 {
-    public partial class MtgCardScanningPage : BasePage
+    public partial class MtgCardScanningPage : ContentPage
     {
         public MtgCardScanningPage()
         {
             InitializeComponent();
-			//zoomLabel.Text = string.Format("Zoom: {0}", zoomSlider.Value);
-		}
-
-		private void CameraView_OnAvailable(object? sender, bool e)
-        {
-			Console.WriteLine("OnAvailable");
+            zoomLabel.Text = string.Format("Zoom: {0}", zoomSlider.Value);
         }
-		/*
+
 		private	void ZoomSlider_ValueChanged(object? sender, ValueChangedEventArgs e)
 		{
 			cameraView.Zoom = (float)zoomSlider.Value;
@@ -32,10 +26,9 @@ namespace TestTcgScanner
 			else
 				cameraView.CaptureMode = CameraCaptureMode.Photo;
 
-			//previewPicture.IsVisible = !captureVideo;
-			//previewVideo.IsVisible = captureVideo;
+            previewPicture.IsVisible = !captureVideo;
 
-			doCameraThings.Text = e.Value ? "Start Recording"
+            doCameraThings.Text = e.Value ? "Start Recording"
 				: "Snap Picture";
 		}
 
@@ -78,20 +71,19 @@ namespace TestTcgScanner
 				default:
 				case CameraCaptureMode.Default:
 				case CameraCaptureMode.Photo:
-					//previewVideo.IsVisible = false;
-					//previewPicture.IsVisible = true;
-					//previewPicture.Rotation = e.Rotation;
-					//previewPicture.Source = e.Image;
-					doCameraThings.Text = "Snap Picture";
+                    previewVideo.IsVisible = false;
+                    previewPicture.IsVisible = true;
+                    previewPicture.Rotation = e.Rotation;
+                    previewPicture.Source = e.Image;
+                    doCameraThings.Text = "Snap Picture";
 					break;
 				case CameraCaptureMode.Video:
-					//previewPicture.IsVisible = false;
-					//previewVideo.IsVisible = true;
-					//previewVideo.Source = e.Video;
-					doCameraThings.Text = "Start Recording";
+                    previewPicture.IsVisible = false;
+                    previewVideo.IsVisible = true;
+                    previewVideo.Source = e.Video;
+                    doCameraThings.Text = "Start Recording";
 					break;
 			}
 		}
-		*/
 	}
 }

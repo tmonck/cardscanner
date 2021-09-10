@@ -1,66 +1,54 @@
-<pages:BasePage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
              x:Class="TestTcgScanner.MtgCardScanningPage"
-             xmlns:pages="clr-namespace:TestTcgScanner.Pages"
              BackgroundColor="{DynamicResource PageBackgroundColor}">
 
     <ScrollView  Padding="{OnPlatform iOS='30,60,30,30', Default='30'}">
-<Grid RowSpacing="25" RowDefinitions="Auto,Auto,Auto,Auto,Auto,*">
-        <!--Works-->
-            <xct:CameraView
-                    Grid.Row="0"
-                    x:Name="cameraView"
-                    CaptureMode="Photo"
-                    CameraOptions="Back"
-                    FlashMode="Off"
-                    HorizontalOptions="FillAndExpand"
-                    VerticalOptions="FillAndExpand"
-                    OnAvailable="CameraView_OnAvailable"
-                />
-
-        <!--<Grid RowDefinitions="300, Auto">
+            <Grid RowDefinitions="300, Auto, Auto">
             <Grid ColumnDefinitions="*, *" Grid.Row="0">
             
-                --><!--No Works--><!--
+                
+            <!--No Works-->
+
                 <xct:CameraView
-                    Grid.Column="1"
+                    Grid.Column="0"
                     x:Name="cameraView"
                     CaptureMode="Photo"
                     FlashMode="Off"
+                    MediaCaptured="CameraView_MediaCaptured"
+                    OnAvailable="CameraView_OnAvailable"
                     HorizontalOptions="FillAndExpand"
-                    VerticalOptions="FillAndExpand" />-->
-                    <!--MediaCaptured="CameraView_MediaCaptured"
-                    OnAvailable="CameraView_OnAvailable"-->
-                <!--<Label
+                    VerticalOptions="FillAndExpand"/>
+            <Label
                     Grid.Column="0"
                     Text="Camera"
                     HorizontalTextAlignment="Center"
                     HorizontalOptions="FillAndExpand"
-                    VerticalOptions="End" />-->
+                    VerticalOptions="End" />
 
-                <!--<Image
-                    Grid.Column="2"
+            <Image
+                    Grid.Column="1"
                     x:Name="previewPicture"
                     Aspect="AspectFit"
                     BackgroundColor="Black" />
 
                 <xct:MediaElement
-                    Grid.Column="2"
+                    Grid.Column="1"
                     x:Name="previewVideo"
                     Aspect="AspectFit"
                     BackgroundColor="LightGray"
                     IsVisible="false"/>
                 <Label
-                    Grid.Column="2"
+                    Grid.Column="1"
                     Text="Result"
                     HorizontalTextAlignment="Center"
                     HorizontalOptions="FillAndExpand"
-                    VerticalOptions="End" />-->
-            <!--</Grid>-->
+                    VerticalOptions="End" />
+            </Grid>
 
 
-            <!--<StackLayout Grid.Row="1" Orientation="Horizontal">
+            <StackLayout Grid.Row="1" Orientation="Horizontal">
                 <Label x:Name="zoomLabel" />
                 <Slider
                     x:Name="zoomSlider"
@@ -114,9 +102,9 @@
                     x:Name="doCameraThings"
                     Clicked="DoCameraThings_Clicked"
                     IsEnabled="False"
-                    Text="Snap picture" />-->
+                    Text="Snap picture" />
 
-            <!--</StackLayout>-->
+            </StackLayout>
         </Grid>
     </ScrollView>
-</pages:BasePage>
+</ContentPage>
