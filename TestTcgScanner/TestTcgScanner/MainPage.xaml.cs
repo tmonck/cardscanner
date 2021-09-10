@@ -37,9 +37,9 @@ namespace TestTcgScanner
 			Console.WriteLine("OnAvailable");
         }
 
-        private async void OnTakePicture(object sender, EventArgs e)
+        private void OnTakePicture(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new MtgCardScanningPage());
+            App.Current.MainPage.Navigation.PushAsync(new MtgCardScanningPage());
         }
     }
 }
