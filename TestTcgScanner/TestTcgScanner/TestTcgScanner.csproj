@@ -1,84 +1,84 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
-	<PropertyGroup>
-		<!-- iOS, Android, MacCatalyst -->
-		<!--<TargetFrameworks>net6.0-ios;net6.0-android;net6.0-maccatalyst</TargetFrameworks>-->
-		<TargetFrameworks>net6.0-android</TargetFrameworks>
-		<OutputType>Exe</OutputType>
-		<UseMaui>true</UseMaui>
-		<SingleProject>true</SingleProject>
-		<RootNamespace>TestTcgScanner</RootNamespace>
-
-		<!-- Display name -->
-		<ApplicationTitle>TestTcgScanner</ApplicationTitle>
-
-		<!-- App Identifier -->
-		<ApplicationId>com.companyname.TestTcgScanner</ApplicationId>
-
-		<!-- Versions -->
-		<ApplicationVersion>1.0</ApplicationVersion>
-		<AndroidVersionCode>1</AndroidVersionCode>
-	</PropertyGroup>
-
-	<ItemGroup>
-		<!-- App Icon -->
-		<MauiImage Include="Resources\appicon.svg" ForegroundFile="Resources\appiconfg.svg" IsAppIcon="true" Color="#512BD4" />
-
-		<!-- Splash Screen -->
-		<MauiSplashScreen Include="Resources\appiconfg.svg" Color="#512BD4" />
-
-		<!-- Images -->
-		<MauiImage Include="Resources\Images\*" />
-
-		<!-- Custom Fonts -->
-		<MauiFont Include="Resources\Fonts\*" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <None Include="..\..\.editorconfig" Link=".editorconfig" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <PackageReference Include="AsyncAwaitBestPractices" Version="6.0.0" />
-	  <PackageReference Include="AsyncAwaitBestPractices.MVVM" Version="6.0.0" />
-	  <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0-preview.7.21377.19" />
-	  <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0-preview.7.21377.19" />
-	  <PackageReference Include="Microsoft.Extensions.Http" Version="6.0.0-preview.7.21377.19" />
-	  <PackageReference Include="Polly" Version="7.2.2" />
-	  <PackageReference Include="Refit" Version="6.0.94" />
-	  <PackageReference Include="Refit.HttpClientFactory" Version="6.0.94" />
-	  <PackageReference Include="Refit.Newtonsoft.Json" Version="6.0.94" />
-	  <PackageReference Include="System.Drawing.Common" Version="6.0.0-preview.7.21377.19" />
-	  <PackageReference Include="Xamarin.CommunityToolkit.Markup.MauiCompat" Version="1.3.0-alpha2" />
-	  <PackageReference Include="Xamarin.CommunityToolkit.MauiCompat" Version="1.3.0-alpha2" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Compile Update="Views\DeckListPage.xaml.cs">
-	    <DependentUpon>DeckListPage.xaml</DependentUpon>
-	  </Compile>
-	  <Compile Update="Views\MtgCardScanningPage.xaml.cs">
-	    <DependentUpon>MtgCardScanningPage.xaml</DependentUpon>
-	  </Compile>
-	</ItemGroup>
-
-	<ItemGroup>
-	  <MauiXaml Update="Views\DeckListPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Views\MtgCardScanningPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	</ItemGroup>
-
-	<PropertyGroup>
-		<!--<InvariantGlobalization Condition="$(TargetFramework.Contains('-maccatalyst'))">true</InvariantGlobalization>
+  <PropertyGroup>
+    <!-- iOS, Android, MacCatalyst -->
+    <!--<TargetFrameworks>net6.0-ios;net6.0-android;net6.0-maccatalyst</TargetFrameworks>-->
+    <TargetFrameworks>net6.0-android</TargetFrameworks>
+    <OutputType>Exe</OutputType>
+    <UseMaui>true</UseMaui>
+    <SingleProject>true</SingleProject>
+    <RootNamespace>TestTcgScanner</RootNamespace>
+    <EnablePreviewMsixTooling>true</EnablePreviewMsixTooling>
+    <!-- Display name -->
+    <ApplicationTitle>TestTcgScanner</ApplicationTitle>
+    <!-- App Identifier -->
+    <ApplicationId>com.companyname.TestTcgScanner</ApplicationId>
+    <!-- Versions -->
+    <ApplicationVersion>1.0</ApplicationVersion>
+    <AndroidVersionCode>1</AndroidVersionCode>
+    <!-- Required for C# Hot Reload -->
+    <UseInterpreter Condition="'$(Configuration)' == 'Debug'">True</UseInterpreter>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- App Icon -->
+    <MauiImage Include="Resources\appicon.svg" ForegroundFile="Resources\appiconfg.svg" IsAppIcon="true" Color="#512BD4" />
+    <!-- Splash Screen -->
+    <MauiSplashScreen Include="Resources\appiconfg.svg" Color="#512BD4" />
+    <!-- Images -->
+    <MauiImage Include="Resources\Images\*" />
+    <!-- Custom Fonts -->
+    <MauiFont Include="Resources\Fonts\*" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="AsyncAwaitBestPractices" Version="6.0.0" />
+    <PackageReference Include="AsyncAwaitBestPractices.MVVM" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0-rc.1.21451.13" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0-rc.1.21451.13" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="6.0.0-rc.1.21451.13" />
+    <PackageReference Include="Microsoft.Extensions.ML" Version="1.6.0" />
+    <PackageReference Include="Microsoft.ML" Version="1.6.0" />
+    <PackageReference Include="Microsoft.ML.Experimental" Version="0.18.0" />
+    <PackageReference Include="Microsoft.ML.ImageAnalytics" Version="1.6.0" />
+    <PackageReference Include="Microsoft.ML.Vision" Version="1.6.0" />
+    <PackageReference Include="Polly" Version="7.2.2" />
+    <PackageReference Include="Refit" Version="6.0.94" />
+    <PackageReference Include="Refit.HttpClientFactory" Version="6.0.94" />
+    <PackageReference Include="Refit.Newtonsoft.Json" Version="6.0.94" />
+    <PackageReference Include="SciSharp.TensorFlow.Redist" Version="2.3.1" />
+    <PackageReference Include="System.Drawing.Common" Version="6.0.0-rc.1.21451.13" />
+    <PackageReference Include="Xamarin.AndroidX.Camera.Camera2" Version="1.0.1.1" />
+    <PackageReference Include="Xamarin.AndroidX.Camera.Core" Version="1.0.1.1" />
+    <PackageReference Include="Xamarin.AndroidX.Camera.Lifecycle" Version="1.0.1.1" />
+    <PackageReference Include="Xamarin.AndroidX.Camera.View" Version="1.0.0.5-alpha20-net6preview03.4680155" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Pages\DeckListPage.xaml.cs">
+      <DependentUpon>DeckListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Pages\MtgCardScanningPage.xaml.cs">
+      <DependentUpon>MtgCardScanningPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <MauiXaml Update="Pages\DeckListPage.xaml">
+      <Generator>
+      </Generator>
+    </MauiXaml>
+    <MauiXaml Update="Pages\MtgCardScanningPage.xaml">
+      <Generator>
+      </Generator>
+    </MauiXaml>
+  </ItemGroup>
+  <PropertyGroup>
+    <!--<InvariantGlobalization Condition="$(TargetFramework.Contains('-maccatalyst'))">true</InvariantGlobalization>
 		<RuntimeIdentifier Condition="$(TargetFramework.Contains('-ios'))">iossimulator-x64</RuntimeIdentifier>
 		<RuntimeIdentifier Condition="$(TargetFramework.Contains('-maccatalyst'))">maccatalyst-x64</RuntimeIdentifier>-->
-		<UseInterpreter Condition="$(TargetFramework.Contains('-android'))">False</UseInterpreter>
-		<Nullable>enable</Nullable>
-	</PropertyGroup>
-
-	<ProjectExtensions><VisualStudio><UserProperties XamarinHotReloadDebuggerTimeoutExceptionTestTcgScannerHideInfoBar="True" /></VisualStudio></ProjectExtensions>
-
+    <UseInterpreter Condition="$(TargetFramework.Contains('-android'))">False</UseInterpreter>
+    <Nullable>annotations</Nullable>
+    <MinimumPlatformVersion>30.0</MinimumPlatformVersion>
+  </PropertyGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties XamarinHotReloadDebuggerTimeoutExceptionTestTcgScannerHideInfoBar="True" />
+    </VisualStudio>
+  </ProjectExtensions>
 </Project>

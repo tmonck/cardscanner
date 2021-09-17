@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+
 using AsyncAwaitBestPractices;
 
 namespace TestTcgScanner.ViewModels.Base
 {
-    abstract class BaseViewModel : INotifyPropertyChanged
+    internal abstract class BaseViewModel : INotifyPropertyChanged
     {
-        readonly WeakEventManager _propertyChangedEventManager = new();
+        private readonly WeakEventManager _propertyChangedEventManager = new();
 
         event PropertyChangedEventHandler? INotifyPropertyChanged.PropertyChanged
         {
@@ -28,7 +29,7 @@ namespace TestTcgScanner.ViewModels.Base
             OnPropertyChanged(propertyname);
         }
 
-        void OnPropertyChanged([CallerMemberName] in string propertyName = "") =>
+        private void OnPropertyChanged([CallerMemberName] in string propertyName = "") =>
             _propertyChangedEventManager.RaiseEvent(this, new PropertyChangedEventArgs(propertyName), nameof(INotifyPropertyChanged.PropertyChanged));
     }
 }

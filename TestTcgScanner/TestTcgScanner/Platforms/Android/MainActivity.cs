@@ -4,6 +4,7 @@ using Android.Content.PM;
 using Android.OS;
 using Android.Runtime;
 using Android.Widget;
+
 using Microsoft.Maui;
 
 namespace TestTcgScanner.Platforms.Android
@@ -11,6 +12,17 @@ namespace TestTcgScanner.Platforms.Android
     [Activity(Theme = "@style/Maui.SplashTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize)]
     public class MainActivity : MauiAppCompatActivity
     {
+        public MainActivity()
+        {
+            Microsoft.Maui.Handlers.ViewHandler.ViewMapper.Add("Xamarin.CommunityToolkit.UI.Views.CameraView", (handler, view) =>
+            {
+                var nativeView = handler.NativeView;
+
+
+                var test2 = view;
+            });
+        }
+
         // All Code in this file came from https://github.com/dotnet/maui/blob/main/src/Essentials/samples/Samples/Platforms/Android/MainActivity.cs need to determine what is needed and what isn't.
         protected override void OnCreate(Bundle? bundle)
         {
@@ -41,7 +53,7 @@ namespace TestTcgScanner.Platforms.Android
             Microsoft.Maui.Essentials.Platform.ActivityStateChanged -= Platform_ActivityStateChanged;
         }
 
-        void Platform_ActivityStateChanged(object? sender, Microsoft.Maui.Essentials.ActivityStateChangedEventArgs e) =>
+        private void Platform_ActivityStateChanged(object? sender, Microsoft.Maui.Essentials.ActivityStateChangedEventArgs e) =>
             Toast.MakeText(this, e.State.ToString(), ToastLength.Short)!.Show();
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Permission[] grantResults)

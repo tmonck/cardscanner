@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TestTcgScanner
+namespace TestTcgScanner.Models
 {
     public class MtgCardRuling
     {

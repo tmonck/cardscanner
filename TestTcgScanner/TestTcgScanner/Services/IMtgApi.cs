@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+
 using Refit;
+
 using TestTcgScanner.Models;
 
 namespace TestTcgScanner.Services

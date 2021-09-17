@@ -10,42 +10,37 @@ using Newtonsoft.Json;
 using Refit;
 using TestTcgScanner.Models;
 using TestTcgScanner.Services;
-
-[assembly: XamlCompilationAttribute(XamlCompilationOptions.Compile)]
+using TestTcgScanner.Extensions;
+using TestTcgScanner.Views.CameraView;
 
 namespace TestTcgScanner
 {
-    public class Startup : IStartup
+    public static class MauiProgram
     {
-        public void Configure(IAppHostBuilder appBuilder)
+        public static MauiApp CreateMauiApp()
         {
+            var appBuilder = MauiApp.CreateBuilder();
             appBuilder
                 .UseMauiApp<App>()
+                .UseCardReader<CardReader>()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
-                })
-                .ConfigureMauiHandlers(handlers =>
-                {
-
-                    // Register just one handler for the control you need
-                    handlers.AddCompatibilityRenderers(typeof(Xamarin.CommunityToolkit.UI.Views.MediaElementRenderer).Assembly);
-
-                })
-                .ConfigureServices(services =>
-                {
-                    services.AddSingleton(RestService.For<IMtgApi>("https://api.magicthegathering.io/v1", new RefitSettings()
-                    {
-                        ContentSerializer = new NewtonsoftJsonContentSerializer(new JsonSerializerSettings()
-                        {
-                            Formatting = Formatting.Indented,
-                            MissingMemberHandling = MissingMemberHandling.Ignore,
-                            NullValueHandling = NullValueHandling.Ignore,
-                            StringEscapeHandling = StringEscapeHandling.EscapeHtml
-                        })
-                    }));
-                    services.AddSingleton<MtgApiService>();
                 });
+
+            appBuilder.Services.AddSingleton(RestService.For<IMtgApi>("https://api.magicthegathering.io/v1", new RefitSettings()
+            {
+                ContentSerializer = new NewtonsoftJsonContentSerializer(new JsonSerializerSettings()
+                {
+                    Formatting = Formatting.Indented,
+                    MissingMemberHandling = MissingMemberHandling.Ignore,
+                    NullValueHandling = NullValueHandling.Ignore,
+                    StringEscapeHandling = StringEscapeHandling.EscapeHtml
+                })
+            }));
+            appBuilder.Services.AddSingleton<MtgApiService>();
+
+            return appBuilder.Build();
         }
     }
 }

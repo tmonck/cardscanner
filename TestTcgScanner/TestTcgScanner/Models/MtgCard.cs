@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
-namespace TestTcgScanner
+
+namespace TestTcgScanner.Models
 {
     public class MtgCard
     {
@@ -12,8 +13,8 @@ namespace TestTcgScanner
         public string? Id { get; set; }
         public List<string>? Names { get; set; }
         public string ManaCost { get; set; } = "";
-        public double? Cmc {  get; set; }
-        public List<string>? Colors {  get; set; }
+        public double? Cmc { get; set; }
+        public List<string>? Colors { get; set; }
         public List<string>? ColorIdentity { get; set; }
         public string Type { get; set; } = "";
         public List<string>? Supertypes { get; set; }

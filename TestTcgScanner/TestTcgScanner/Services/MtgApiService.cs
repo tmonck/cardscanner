@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web;
+
 using Refit;
+
 using TestTcgScanner.Models;
 
 namespace TestTcgScanner.Services
