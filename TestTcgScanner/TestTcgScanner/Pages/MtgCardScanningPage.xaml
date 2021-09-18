@@ -1,18 +1,11 @@
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TestTcgScanner.Pages.MtgCardScanningPage"
-             xmlns:cv="clr-namespace:TestTcgScanner.Views.CameraView"
+             xmlns:cv="clr-namespace:Maui.CameraTools.Views;assembly=Maui.CameraTools"
              BackgroundColor="{DynamicResource PageBackgroundColor}">
 
-    <StackLayout >
-        <cv:CameraCardReaderView x:Name="cameraView"
-                                 VerticalOptions="Fill"
-                                 HorizontalOptions="Fill"
-                                 CameraLocation="Rear"
-                                 IsTorchOn="True"
-                                 Visual="Material"
-                                 >
-            
-        </cv:CameraCardReaderView>
-    </StackLayout>
+    <FlexLayout HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand">
+        <cv:CardScannerView />
+    </FlexLayout>
 </ContentPage>

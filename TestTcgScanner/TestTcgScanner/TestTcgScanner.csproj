@@ -34,21 +34,16 @@
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0-rc.1.21451.13" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0-rc.1.21451.13" />
     <PackageReference Include="Microsoft.Extensions.Http" Version="6.0.0-rc.1.21451.13" />
-    <PackageReference Include="Microsoft.Extensions.ML" Version="1.6.0" />
     <PackageReference Include="Microsoft.ML" Version="1.6.0" />
-    <PackageReference Include="Microsoft.ML.Experimental" Version="0.18.0" />
     <PackageReference Include="Microsoft.ML.ImageAnalytics" Version="1.6.0" />
     <PackageReference Include="Microsoft.ML.Vision" Version="1.6.0" />
     <PackageReference Include="Polly" Version="7.2.2" />
     <PackageReference Include="Refit" Version="6.0.94" />
     <PackageReference Include="Refit.HttpClientFactory" Version="6.0.94" />
     <PackageReference Include="Refit.Newtonsoft.Json" Version="6.0.94" />
+    <PackageReference Include="Savi.Maui.CameraTools" Version="0.1.0-pre" />
     <PackageReference Include="SciSharp.TensorFlow.Redist" Version="2.3.1" />
     <PackageReference Include="System.Drawing.Common" Version="6.0.0-rc.1.21451.13" />
-    <PackageReference Include="Xamarin.AndroidX.Camera.Camera2" Version="1.0.1.1" />
-    <PackageReference Include="Xamarin.AndroidX.Camera.Core" Version="1.0.1.1" />
-    <PackageReference Include="Xamarin.AndroidX.Camera.Lifecycle" Version="1.0.1.1" />
-    <PackageReference Include="Xamarin.AndroidX.Camera.View" Version="1.0.0.5-alpha20-net6preview03.4680155" />
   </ItemGroup>
   <ItemGroup>
     <Compile Update="Pages\DeckListPage.xaml.cs">
@@ -69,9 +64,9 @@
     </MauiXaml>
   </ItemGroup>
   <PropertyGroup>
-    <!--<InvariantGlobalization Condition="$(TargetFramework.Contains('-maccatalyst'))">true</InvariantGlobalization>
-		<RuntimeIdentifier Condition="$(TargetFramework.Contains('-ios'))">iossimulator-x64</RuntimeIdentifier>
-		<RuntimeIdentifier Condition="$(TargetFramework.Contains('-maccatalyst'))">maccatalyst-x64</RuntimeIdentifier>-->
+    <InvariantGlobalization Condition="$(TargetFramework.Contains('-maccatalyst'))">true</InvariantGlobalization>
+    <RuntimeIdentifier Condition="$(TargetFramework.Contains('-ios'))">iossimulator-x64</RuntimeIdentifier>
+    <RuntimeIdentifier Condition="$(TargetFramework.Contains('-maccatalyst'))">maccatalyst-x64</RuntimeIdentifier>
     <UseInterpreter Condition="$(TargetFramework.Contains('-android'))">False</UseInterpreter>
     <Nullable>annotations</Nullable>
     <MinimumPlatformVersion>30.0</MinimumPlatformVersion>

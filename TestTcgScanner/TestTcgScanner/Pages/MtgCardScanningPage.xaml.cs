@@ -1,5 +1,7 @@
 ﻿using System;
 using Microsoft.Maui.Controls;
+using Maui.CameraTools;
+using Maui.CameraTools.CameraView;
 
 namespace TestTcgScanner.Pages
 {
@@ -8,7 +10,6 @@ namespace TestTcgScanner.Pages
         public MtgCardScanningPage()
         {
             InitializeComponent();
-            //zoomLabel.Text = string.Format("Zoom: {0}", zoomSlider.Value);
         }
 
         //private void ZoomSlider_ValueChanged(object? sender, ValueChangedEventArgs e)

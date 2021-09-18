@@ -1,5 +1,6 @@
 ﻿using System;
 using Java.Text;
+using Maui.CameraTools.Extensions;
 using Microsoft.Maui;
 using Microsoft.Maui.Hosting;
 using Microsoft.Maui.Controls.Compatibility;
@@ -10,8 +11,6 @@ using Newtonsoft.Json;
 using Refit;
 using TestTcgScanner.Models;
 using TestTcgScanner.Services;
-using TestTcgScanner.Extensions;
-using TestTcgScanner.Views.CameraView;
 
 namespace TestTcgScanner
 {
@@ -22,7 +21,7 @@ namespace TestTcgScanner
             var appBuilder = MauiApp.CreateBuilder();
             appBuilder
                 .UseMauiApp<App>()
-                .UseCardReader<CardReader>()
+                .UseMauiCameraTools()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
