@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "23294788917",
+    "project_id": "tcg-scanner",
+    "storage_bucket": "tcg-scanner.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:23294788917:android:aca8af1b706c9893ba387c",
+        "android_client_info": {
+          "package_name": "com.monckcrazy.tcg_scanner"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "23294788917-f77cn5r090jppqhksnbn1oi7qla7liad.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC25JJkvMp9QMYVTmIcPBA6lNs9CxWP25Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "23294788917-f77cn5r090jppqhksnbn1oi7qla7liad.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
